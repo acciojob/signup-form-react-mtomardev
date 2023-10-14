@@ -42,13 +42,14 @@ const App = () => {
     }
 
     else if(password.length < 6){
-      setError('Password must contain at least 6 characters');
+      setError('Password must contain atleast 6 letters');
       setWelcomeMessage('');
     }
 
     else{
       //substrating name from Email
-      let UserName = email.split('@')[0]
+      let User = email.split('@')[0]
+      let UserName = User.toUpperCase;
       setWelcomeMessage(`Hello ${UserName}`)
       setError('');
     }
@@ -66,9 +67,9 @@ const App = () => {
       <select data-testid = 'gender'
       value={gender}
       onChange={(e)=>setGender(e.target.value)}>
-        <option>Male</option>
-        <option>Female</option>
-        <option>Other</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
       </select>
       <label htmlFor='Phone Number'>Phone Number</label>
       <input data-testid = 'phoneNumber' type="number" onChange={(e)=>setPhoneNumber(e.target.value)}/>
