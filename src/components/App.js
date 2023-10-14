@@ -61,8 +61,9 @@ const App = () => {
       <form onSubmit={handleSubmit}>
       <label htmlFor='Name'>Name: </label>
       <input data-testid = 'name' type="text" onChange={(e)=> setName(e.target.value)} />
-      <label htmlFor='Email'>Email</label>
-      <input data-testid = 'email' type="email" onChange={(e)=>setEmail(e.target.value)}/>
+      <span><label htmlFor='Email'>Email</label></span>
+      <span><input data-testid = 'email' type="email" onChange={(e)=>setEmail(e.target.value)}/></span>
+      
       <label htmlFor='Gender'>Gender</label>
       <select data-testid = 'gender'
       value={gender}
