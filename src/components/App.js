@@ -67,12 +67,13 @@ const App = () => {
       <select data-testid = 'gender'
       value={gender}
       onChange={(e)=>setGender(e.target.value)}>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Other">Other</option>
+         <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
       </select>
       <label htmlFor='Phone Number'>Phone Number</label>
-      <input data-testid = 'phoneNumber' type="number" onChange={(e)=>setPhoneNumber(e.target.value)}/>
+      <input data-testid = 'phoneNumber' type="number" 
+      onChange={(e)=>setPhoneNumber(e.target.value)}/>
 
       <label htmlFor='Password'>Password</label>
       <input data-testid = 'password' type="text" onChange={(e)=>setPassword(e.target.value)}/>
