@@ -33,7 +33,7 @@ const App = () => {
     //if gender is not equal to Male Femal and Other than error will come
     //if gender 3no main se kisi ke bhi barabar howa than error will not come
     else if(gender !== 'Male' && gender !== 'Female' && gender !== 'Other'){
-      setError('Please identify as male, female, or other')
+      setError('Please identify as male, female or others')
       setWelcomeMessage('')
     }
     else if(!phoneNumber.match(/^[0-9]+$/)){
