@@ -71,7 +71,7 @@ const App = () => {
       <form onSubmit={handleSubmit}>
       <label htmlFor='Name'>Name: </label>
       <input data-testid = 'name' type="text" onChange={(e)=> setName(e.target.value)} />
-      <label htmlFor='Email'>Email: </label>
+      <label htmlFor='Email'> <span> Email: </span> </label>
       <input data-testid = 'email' type="email" 
       onChange={(e)=>setEmail(e.target.value)}/>
       
