@@ -2,7 +2,11 @@ import react from 'react'
 
 const SignUpForm = () =>{
     return(
-        <div></div>
+        <div>
+            Sign Up Form
+            <label htmlFor='Name'>Name</label>
+            <input type='text'/>
+        </div>
     )
 }
 
