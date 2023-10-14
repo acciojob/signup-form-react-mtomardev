@@ -80,10 +80,10 @@ const App = () => {
       </form>
 
     {
-      error && <div>{error}</div>
+      error && <div><span>{error}</span></div>
     } 
 
-    {welcomeMessage && <div>{welcomeMessage}</div>}       
+    {welcomeMessage && <div><h2>{welcomeMessage}</h2></div>}       
       
     </div>
   )
