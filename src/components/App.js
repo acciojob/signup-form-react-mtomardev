@@ -36,10 +36,6 @@ const App = () => {
       setError('Please identify as male, female or others')
       setWelcomeMessage('')
     }
-    else if(!phoneNumber.match(/^[0-9]+$/)){
-      setError('Phone Number must contain only numbers')
-      setWelcomeMessage('')
-    }
 
     else if(password.length < 6){
       setError('Password must contain atleast 6 letters');
@@ -55,17 +51,26 @@ const App = () => {
     }
 
   };
+
+  const handlePhoneNumberChange = (e) => {
+    const inputValue = e.target.value;
+    // Use a regular expression to remove non-numeric characters
+    const numericValue = inputValue.replace(/\D/g, '');
+    // Update the state with the cleaned numeric value
+    setPhoneNumber(numericValue);
+  };
+  
   return (
     <div id="main">
       Sign Up Form
       <form onSubmit={handleSubmit}>
       <label htmlFor='Name'>Name: </label>
       <input data-testid = 'name' type="text" onChange={(e)=> setName(e.target.value)} />
-      <label htmlFor='Email'>Email</label>
+      <label htmlFor='Email'>Email: </label>
       <input data-testid = 'email' type="email" 
       onChange={(e)=>setEmail(e.target.value)}/>
       
-      <label htmlFor='Gender'>Gender</label>
+      <label htmlFor='Gender'> Gender: </label>
       <select data-testid = 'gender'
       value={gender}
       onChange={(e)=>setGender(e.target.value)}>
@@ -73,11 +78,17 @@ const App = () => {
             <option value="female">Female</option>
             <option value="other">Other</option>
       </select>
-      <label htmlFor='Phone Number'>Phone Number</label>
-      <input data-testid = 'phoneNumber' type="number" 
-      onChange={(e)=>setPhoneNumber(e.target.value)}/>
+     
+      <label htmlFor='Phone Number'> Phone Number: </label>
+      <input
+  data-testid="phoneNumber"
+  type="tel"  // Use type="tel" to indicate a telephone number input
+  pattern="[0-9]*"  // Use pattern attribute to specify a pattern to match (only numbers)
+  onChange={handlePhoneNumberChange}
+  value={phoneNumber}
+/>
 
-      <label htmlFor='Password'>Password</label>
+      <label htmlFor='Password'>Password: </label>
       <input data-testid = 'password' type="text" onChange={(e)=>setPassword(e.target.value)}/>
 
       <button data-testid = 'submit' type="submit">Submit</button>
