@@ -37,6 +37,11 @@ const App = () => {
       setWelcomeMessage('')
     }
 
+    else if (!phoneNumber.match(/^[0-9]+$/)) {
+      setError('Phone Number must contain only numbers');
+      setWelcomeMessage('');
+    }
+
     else if(password.length < 6){
       setError('Password must contain atleast 6 letters');
       setWelcomeMessage('');
@@ -59,7 +64,7 @@ const App = () => {
     // Update the state with the cleaned numeric value
     setPhoneNumber(numericValue);
   };
-  
+
   return (
     <div id="main">
       Sign Up Form
