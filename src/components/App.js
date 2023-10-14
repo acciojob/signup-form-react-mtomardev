@@ -49,7 +49,7 @@ const App = () => {
     else{
       //substrating name from Email
       let User = email.split('@')[0]
-      let UserName = User.toUpperCase;
+      let UserName = User.toUpperCase();
       setWelcomeMessage(`Hello ${UserName}`)
       setError('');
     }
